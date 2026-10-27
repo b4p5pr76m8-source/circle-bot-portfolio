@@ -47,3 +47,11 @@
 - [ ] Run relevant regression checks
 - [ ] Confirm environment variables
 - [ ] Confirm main LINE and admin flows after deployment
+
+
+## Security
+- [ ] Missing / invalid LINE signature is rejected
+- [ ] Expired or invalid admin token is rejected
+- [ ] Non-admin users cannot create an admin session
+- [ ] Secrets are not committed to Git
+- [ ] CSRF-protected actions reject invalid requests
