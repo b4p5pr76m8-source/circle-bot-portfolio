@@ -2,11 +2,15 @@ import os
 from functools import wraps
 
 from flask import Flask, redirect, request, session, url_for
-from itsdangerous import URLSafeTimedSerializer
+from itsdangerous import BadSignature, SignatureExpired, URLSafeTimedSerializer
 
 app = Flask(__name__)
-app.secret_key = os.getenv("FLASK_SECRET_KEY")
 
+secret_key = os.getenv("FLASK_SECRET_KEY")
+if not secret_key:
+    raise RuntimeError("FLASK_SECRET_KEY is required")
+
+app.secret_key = secret_key
 app.config["SESSION_COOKIE_HTTPONLY"] = True
 app.config["SESSION_COOKIE_SAMESITE"] = "Lax"
 app.config["SESSION_COOKIE_SECURE"] = True
@@ -36,8 +40,10 @@ def auth():
             salt="admin-login",
             max_age=300,
         )
-    except Exception:
-        return "Invalid or expired token", 401
+    except SignatureExpired:
+        return "Expired token", 401
+    except BadSignature:
+        return "Invalid token", 401
 
     # In production, the member record is checked in SQLite here.
     is_admin = lookup_admin_role(user_id)
