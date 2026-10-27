@@ -5,7 +5,12 @@ from linebot.v3 import WebhookHandler
 from linebot.v3.exceptions import InvalidSignatureError
 
 app = Flask(__name__)
-handler = WebhookHandler(os.getenv("LINE_CHANNEL_SECRET"))
+
+channel_secret = os.getenv("LINE_CHANNEL_SECRET")
+if not channel_secret:
+    raise RuntimeError("LINE_CHANNEL_SECRET is required")
+
+handler = WebhookHandler(channel_secret)
 
 
 @app.route("/callback", methods=["POST"])
