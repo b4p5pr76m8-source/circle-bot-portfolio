@@ -5,6 +5,29 @@
 > 本番環境で使用しているリポジトリは非公開です。  
 > このリポジトリでは、個人情報・本番URL・秘密情報・運用上センシティブな実装を除き、設計思想と代表的な実装例を公開しています。
 
+## Screenshots
+
+実際の運用画面です。一般会員はLINEから操作し、幹部はWeb管理画面から会計・会員・活動などを管理します。
+
+<table>
+  <tr>
+    <td align="center"><strong>LINEメニュー</strong></td>
+    <td align="center"><strong>管理画面ホーム</strong></td>
+  </tr>
+  <tr>
+    <td><img src="IMG_8479.PNG" width="300" alt="LINE menu"></td>
+    <td><img src="IMG_8481.PNG" width="300" alt="Admin dashboard"></td>
+  </tr>
+  <tr>
+    <td align="center"><strong>会計管理</strong></td>
+    <td align="center"><strong>会員管理</strong></td>
+  </tr>
+  <tr>
+    <td><img src="IMG_8482.PNG" width="300" alt="Accounting management"></td>
+    <td><img src="IMG_8484.PNG" width="300" alt="Member management"></td>
+  </tr>
+</table>
+
 ## What I built
 
 一般会員は普段使っているLINEから操作し、幹部はWeb管理画面から会員・会計・経費・徴収・活動予定などを管理できます。
