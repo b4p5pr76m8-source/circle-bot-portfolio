@@ -95,7 +95,7 @@ LINE reply / Admin Web UI
 
 ## Representative implementation
 
-本番コードそのものではなく、実際に採用している設計を簡略化したサンプルを公開しています。
+本番コードそのものではなく、実際に採用している設計を簡略化したサンプルを公開しています。これらは設計説明用の抜粋であり、このPublicリポジトリ単体で本番システムを再現・デプロイすることを目的としていません。
 
 - [Webhook signature verification](examples/webhook.py)
 - [Admin authentication](examples/auth.py)
